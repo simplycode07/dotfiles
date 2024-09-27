@@ -39,9 +39,15 @@ Plug 'nyoom-engineering/oxocarbon.nvim'
 Plug 'Everblush/nvim'
 
 Plug 'akinsho/bufferline.nvim'
-Plug 'stevearc/vim-arduino'
-Plug 'bluz71/vim-moonfly-colors'
+"Plug 'stevearc/vim-arduino'
+Plug 'wellle/context.vim'
 call plug#end()
+
+let g:context_enabled = 0
+let g:context_highlight_normal = 'Normal'
+let g:context_highlight_border = 'Comment'
+let g:context_highlight_tag    = 'Special'
+let g:context_presenter = 'nvim-float'
 
 " colorscheme tokyonight-night
 " colorscheme catppuccin-mocha
