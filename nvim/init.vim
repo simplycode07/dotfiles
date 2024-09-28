@@ -69,12 +69,13 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 nnoremap <TAB> :tabnext<CR>
 nnoremap <S-TAB> :tabNext<CR>
+
 nmap <leader>f :call CocAction("format")<CR>
+nmap <leader>c :let @+ = expand("%:p")<CR>
 
 nnoremap <leader>h :noh<CR>
-xnoremap <leader>p "_dP
-
 vnoremap <leader>y "+y
+vnoremap <leader>p "+p
 
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
