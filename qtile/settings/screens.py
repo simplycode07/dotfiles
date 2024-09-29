@@ -72,7 +72,9 @@ screens = [
                                padding=0,
                                discharge_char="",
                                charge_char="󱐋",
-                               empty_char="∅"),
+                               empty_char="∅",
+                               low_percentage=0.4,
+                               update_interval=5),
                 widget.Sep(padding=16),
 
                 widget.QuickExit(default_text="[󰐥]",

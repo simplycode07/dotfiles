@@ -34,10 +34,8 @@ Plug 'jiangmiao/auto-pairs'
 
 "Plug 'eldritch-theme/eldritch.nvim'
 Plug 'nyoom-engineering/oxocarbon.nvim'
-"Plug 'scottmckendry/cyberdream.nvim'
 "Plug 'decaycs/decay.nvim'
 Plug 'Everblush/nvim'
-
 Plug 'akinsho/bufferline.nvim'
 "Plug 'stevearc/vim-arduino'
 Plug 'wellle/context.vim'
