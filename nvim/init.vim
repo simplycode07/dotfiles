@@ -75,7 +75,7 @@ nmap <leader>c :let @+ = expand("%:p")<CR>
 
 nnoremap <leader>h :noh<CR>
 vnoremap <leader>y "+y
-vnoremap <leader>p "+p
+nnoremap <leader>p "+p
 
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
