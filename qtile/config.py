@@ -8,7 +8,7 @@ import os, random, subprocess
 mod = "mod4"
 terminal = "kitty"
 wallpaper_dir = "/home/dhruv/Wallpapers/"
-
+cursor_warp = True
 # WM_NAME(UTF8_STRING) = "Picture-in-picture"
 
 # borders
@@ -89,23 +89,23 @@ layouts = [
                    insert_postion=1),
     layout.Max(),
     # layout.Stack(num_stacks=2),
-    layout.Bsp(border_focus=color_focused,
-               border_normal=color_normal,
-               border_width=border_width,
-               margin=5,
-               margin_y=3),
+    # layout.Bsp(border_focus=color_focused,
+    #            border_normal=color_normal,
+    #            border_width=border_width,
+    #            margin=5,
+    #            margin_y=3),
  
-    layout.Matrix(border_focus=color_focused,
-                  border_normal=color_normal,
-                  border_width=border_width),
-
-    layout.MonadTall(border_focus=color_focused,
-                     border_normal=color_normal,
-                     border_width=border_width),
-
-    layout.MonadWide(border_focus=color_focused,
-                     border_normal=color_normal,
-                     border_width=border_width),
+    # layout.Matrix(border_focus=color_focused,
+    #               border_normal=color_normal,
+    #               border_width=border_width),
+    #
+    # layout.MonadTall(border_focus=color_focused,
+    #                  border_normal=color_normal,
+    #                  border_width=border_width),
+    #
+    # layout.MonadWide(border_focus=color_focused,
+    #                  border_normal=color_normal,
+    #                  border_width=border_width),
     # layout.RatioTile(),
     # layout.Tile(),
     # layout.TreeTab(),
