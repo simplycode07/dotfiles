@@ -56,7 +56,7 @@ keys = [
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
     Key(
         [mod],
-        "f",
+        "o",
         lazy.window.toggle_fullscreen(),
         desc="Toggle fullscreen on the focused window",
     ),
@@ -74,13 +74,11 @@ keys = [
     #Key([mod, "shift"], "e", lazy.spawn("nemo"), desc="Spawn File explorer"),
 
     # screenshot
-    Key([], "Print", lazy.spawn(["sh", "-c", "gnome-screenshot -c /tmp/screenshot && cat /tmp/screenshot | xclip -i -selection clipboard -target image/png"]), desc="Copy Screenshot to Clipboard"),
-    # Key(["shift"], "Print", lazy.spawn("gnome-screenshot -a -c"), desc="Screenshot of area to clipboard"),
-    Key(["shift"], "Print", lazy.spawn(["sh","-c","gnome-screenshot -acf /tmp/screenshot && cat /tmp/screenshot | xclip -i -selection clipboard -target image/png"]), desc="Screenshot of area to clipboard"),
-    # Key([], "Print", lazy.spawn("gnome-screenshot"), desc="Screenshot of entire screen"),
-    # Key(["shift"], "Print", lazy.spawn("gnome-screenshot -ac"), desc="Screenshot of area to clipboard"),
+    # Key([], "Print", lazy.spawn(["sh", "-c", "gnome-screenshot -c /tmp/screenshot && cat /tmp/screenshot | xclip -i -selection clipboard -target image/png"]), desc="Copy Screenshot to Clipboard"),
     # Key(["shift"], "Print", lazy.spawn(["sh","-c","gnome-screenshot -acf /tmp/screenshot && cat /tmp/screenshot | xclip -i -selection clipboard -target image/png"]), desc="Screenshot of area to clipboard"),
-
+    
+    Key([], "Print", lazy.spawn("flameshot screen -c"), desc="Screenshot of screen"),
+    Key(["shift"], "Print", lazy.spawn("flameshot gui -c -s"), desc="Screenshot of area"),
     # sound and volume controls
 
     Key([], "XF86AudioMute", lazy.spawn("amixer set Master toggle")),

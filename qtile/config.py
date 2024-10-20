@@ -3,7 +3,9 @@ from libqtile.config import Click, Drag, Group, Key, Match, ScratchPad, DropDown
 from libqtile.lazy import lazy
 from settings.keys import keys
 from settings.screens import screens
-import os, random, subprocess
+import os
+import random
+import subprocess
 
 mod = "mod4"
 terminal = "kitty"
@@ -15,6 +17,7 @@ cursor_warp = True
 color_focused = "#ffffff"
 color_normal = "#000000"
 border_width = 2
+
 
 def set_wallpaper(qtile=None, picture=None):
     if picture == None:
@@ -28,20 +31,46 @@ def set_wallpaper(qtile=None, picture=None):
     for screen in screens:
         screen.set_wallpaper(wallpaper_dir+picture, "fill")
 
-groups=[Group("1",
-              layout="columns",
-              label="一"),
-        Group("2",
-              layout="columns",
-              label="二"),
-        Group("3",
-              label="三"),
-        Group("4",
-              label="四"),
-        Group("5",
-              label="五")]
+
+groups = [Group("1",
+                layout="columns",
+                label="一"),
+          Group("2",
+                layout="columns",
+                label="二"),
+          Group("3",
+                label="三"),
+          Group("4",
+                label="四"),
+          Group("5",
+                label="五")]
+layout_key_dict = {
+    "1": "a",
+    "2": "s",
+    "3": "d",
+    "4": "f",
+    "5": "g",
+}
 
 for i in groups:
+    keys.extend(
+        [
+            Key(
+                [mod],
+                layout_key_dict[i.name],
+                lazy.group[i.name].toscreen(),
+                desc="Switch to group {}".format(i.name),
+            ),
+            Key(
+                [mod, "shift"],
+                layout_key_dict[i.name],
+                # i.name,
+                lazy.window.togroup(i.name),
+                desc="Switch to & move focused window to group {}".format(
+                    i.name),
+            ),
+        ]
+    )
     keys.extend(
         [
             Key(
@@ -54,32 +83,33 @@ for i in groups:
                 [mod, "shift"],
                 i.name,
                 lazy.window.togroup(i.name),
-                desc="Switch to & move focused window to group {}".format(i.name),
+                desc="Switch to & move focused window to group {}".format(
+                    i.name),
             ),
         ]
     )
 
 groups.append(
-        ScratchPad("scratchpad", [
-            DropDown("term", 
-                     terminal, 
-                     height=0.6, 
-                     width=0.7,
-                     x=0.15,
-                     y=0.2,
-                     opacity=1,
-                     warp_pointer = True,
-            ),
-        ]),
-    )
+    ScratchPad("scratchpad", [
+        DropDown("term",
+                 terminal,
+                 height=0.6,
+                 width=0.7,
+                 x=0.15,
+                 y=0.2,
+                 opacity=1,
+                 warp_pointer=True,
+                 ),
+    ]),
+)
 
 keys.extend(
-        [
-            Key([mod], "y", lazy.group["scratchpad"].dropdown_toggle("term")),
-            Key([mod], "x", lazy.group["scratchpad"].dropdown_toggle("term")),
-            Key([mod], "w", lazy.function(set_wallpaper)),
-        ]
-    )
+    [
+        Key([mod], "y", lazy.group["scratchpad"].dropdown_toggle("term")),
+        Key([mod], "x", lazy.group["scratchpad"].dropdown_toggle("term")),
+        Key([mod], "w", lazy.function(set_wallpaper)),
+    ]
+)
 layouts = [
     layout.Columns(border_focus=color_focused,
                    border_normal=color_normal,
@@ -94,7 +124,7 @@ layouts = [
     #            border_width=border_width,
     #            margin=5,
     #            margin_y=3),
- 
+
     # layout.Matrix(border_focus=color_focused,
     #               border_normal=color_normal,
     #               border_width=border_width),
@@ -125,8 +155,10 @@ extension_defaults = widget_defaults.copy()
 
 # Drag floating layouts.
 mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
+    Drag([mod], "Button1", lazy.window.set_position_floating(),
+         start=lazy.window.get_position()),
+    Drag([mod], "Button3", lazy.window.set_size_floating(),
+         start=lazy.window.get_size()),
     Click([mod], "Button2", lazy.window.bring_to_front()),
 ]
 
@@ -144,9 +176,9 @@ floating_layout = layout.Floating(
         Match(wm_class="makebranch"),  # gitk
         Match(wm_class="maketag"),  # gitk
         Match(wm_class="ssh-askpass"),  # ssh-askpass
-        Match(wm_class="Godot_Engine"),  
-        Match(wm_class="Godot_Editor"),  
-        Match(wm_class="Godot"),  
+        Match(wm_class="Godot_Engine"),
+        Match(wm_class="Godot_Editor"),
+        Match(wm_class="Godot"),
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"),  # GPG key password entry
         Match(title="Screenshot"),  # Screenshot tool
@@ -176,6 +208,7 @@ wl_input_rules = None
 # java that happens to be on java's whitelist.
 # wmname = "LG3D"
 wmname = "Qtile"
+
 
 @hook.subscribe.startup_once
 def autostart():
