@@ -33,7 +33,7 @@ screens = [
                                 padding_y=8,
                                 padding_x=5,
                                 # this is to slice title and add ... at end
-                                parse_text=lambda x: x[:max_title_length] + \
+                                parse_text=lambda x: x[:max_title_length] +
                                 "..." if len(x) > max_title_length else "",
 
 
@@ -92,4 +92,12 @@ screens = [
 
         x11_drag_polling_rate=60,
     ),
+    Screen(
+        # top=bar.Bar([], 35,
+        #             opacity=1,
+        #             margin=[5, 5, 5, 5],
+        #             border_width=[2, 2, 2, 2],
+        #             border_color="#00000000"
+        #             ),
+    )
 ]
