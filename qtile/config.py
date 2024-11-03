@@ -16,7 +16,7 @@ cursor_warp = True
 # borders
 color_focused = "#ffffff"
 color_normal = "#000000"
-border_width = 2
+border_width = 4
 
 
 def set_wallpaper(qtile=None, picture=None):
@@ -215,4 +215,4 @@ def autostart():
     script = os.path.expanduser("~/.config/qtile/autostart.sh")
     subprocess.Popen([script])
     # lazy.function(set_wallpaper)
-    set_wallpaper()
+    set_wallpaper(picture="20.jpg")
