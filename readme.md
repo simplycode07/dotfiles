@@ -5,5 +5,6 @@
 - **Text Editor**: nvim
 
 ## Screenshots
-![img](./screenshots/fetch.png)
-![img](./screenshots/nvim.png)
+- ![img](./screenshots/empty.png)
+- ![img](./screenshots/fetch.png)
+- ![img](./screenshots/nvim.png)
