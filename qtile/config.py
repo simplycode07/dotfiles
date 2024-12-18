@@ -145,7 +145,8 @@ layouts = [
 
 widget_defaults = dict(
     # font="VeraSe",
-
+    background = "#010F1A",
+    foreground = "#ffffff",
     font="DejaVuSans",
     fontsize=18,
 )
