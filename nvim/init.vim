@@ -22,7 +22,7 @@ Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 "Plug 'https://github.com/rafi/awesome-vim-colorschemes'
-"Plug 'rmagatti/auto-session'
+Plug 'rmagatti/auto-session'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'Shatur/neovim-session-manager'
 "Plug 'preservim/tagbar'
@@ -52,6 +52,7 @@ let g:context_presenter = 'nvim-float'
 " colorscheme eldritch
 colorscheme oxocarbon
 
+let g:airline#extensions#whitespace#enabled = 0
 let g:airline_theme = "tokyonight"
 let g:airline#extensions#tabline#enabled = 0
 " let g:airline_theme = "catpuccin"
