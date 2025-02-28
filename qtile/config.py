@@ -1,4 +1,4 @@
-from libqtile import layout, hook
+from libqtile import qtile, layout, hook
 from libqtile.config import Click, Drag, Group, Key, Match, ScratchPad, DropDown
 from libqtile.lazy import lazy
 from settings.keys import keys
@@ -6,6 +6,10 @@ from settings.screens import screens
 import os
 import random
 import subprocess
+
+if qtile.core.name == "wayland":  
+    os.environ["XDG_SESSION_DESKTOP"] = "qtile:wlroots"
+    os.environ["XDG_CURRENT_DESKTOP"] = "qtile:wlroots"
 
 mod = "mod4"
 terminal = "kitty"
