@@ -87,7 +87,10 @@ screens = [
                                charge_char="󱐋",
                                empty_char="∅",
                                low_percentage=0.4,
-                               update_interval=5),
+                               update_interval=10,
+                               notify_below=40,
+                               low_background="#FF0000",
+                               low_foreground="#FFFFFF"),
                 widget.Sep(padding=16, size_percent=70),
 
                 widget.QuickExit(default_text="[󰐥]",
@@ -106,31 +109,6 @@ screens = [
         x11_drag_polling_rate=60,
     ),
     Screen(
-        # right=bar.Bar([
-        #     widget.Sep(padding=16),
-        #     widget.Clock(format="%H:%M",
-        #                  padding=0,
-        #                  margin=0),
-        #
-        #     # Using 2 widgets because the scroll function doesnt work with TextBox, I could use mouse_callback but thats too much work
-        #     # widget.Volume(fmt="{}",
-        #     #                   emoji=True,
-        #     #                   emoji_list=["󰸈 ", "󰖀 ", "󰕾 ", " "],
-        #     #                   step=2,
-        #     #                   padding=0),
-        #     #
-        #     # widget.Volume(fmt="{}",
-        #     #                   step=2,
-        #     #                   padding=0),
-        #     widget.Sep(padding=16),
-        #
-        #
-        # ], 100,
-        #     opacity=1,
-        #     margin=[5, 5, 5, 5],
-        #     border_width=[2, 2, 2, 2],
-        #     border_color="#00000000"
-        # ),
 
     )
 ]
