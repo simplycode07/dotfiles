@@ -109,6 +109,25 @@ screens = [
         x11_drag_polling_rate=60,
     ),
     Screen(
+        right=bar.Bar([
+            widget.Spacer(10),
+            widget.Clock(format="%H",
+                         rotate=False,
+                         padding=0,
+                         margin=0,
+                         fontsize=30),
 
+            widget.Clock(format="%M",
+                         rotate=False,
+                         padding=0,
+                         margin=0,
+                         fontsize=30),
+
+        ], 35,
+            opacity=1,
+            margin=[5, 5, 5, 5],
+            border_width=[2, 2, 2, 2],
+            border_color="#00000000"
+        ),
     )
 ]
