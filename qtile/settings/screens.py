@@ -124,7 +124,7 @@ screens = [
                          fontsize=30),
 
         ], 35,
-            opacity=1,
+            opacity=0.7,
             margin=[5, 5, 5, 5],
             border_width=[2, 2, 2, 2],
             border_color="#00000000"

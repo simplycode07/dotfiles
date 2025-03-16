@@ -18,7 +18,8 @@ cursor_warp = True
 # WM_NAME(UTF8_STRING) = "Picture-in-picture"
 
 # borders
-color_focused = "#ffffff"
+color_focused = "#24a695"
+# color_focused = "#ffffff"
 color_normal = "#000000"
 border_width = 4
 
@@ -118,6 +119,7 @@ layouts = [
     layout.Columns(border_focus=color_focused,
                    border_normal=color_normal,
                    border_width=border_width,
+                   border_on_single=True,
                    margin=5,
                    margin_y=3,
                    insert_postion=1),
