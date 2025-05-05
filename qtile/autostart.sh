@@ -2,6 +2,7 @@
 # xrandr -s 1680x1050 &
 picom -b &
 otd-daemon &
+fcitx5 -d &
 
 touchpad_id=$( xinput list | grep "Touchpad" | grep -o -P "id=\d\d" | grep -o -P "\d\d" )
 
