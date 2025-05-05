@@ -7,7 +7,7 @@ import os
 import random
 import subprocess
 
-if qtile.core.name == "wayland":  
+if qtile.core.name == "wayland":
     os.environ["XDG_SESSION_DESKTOP"] = "qtile:wlroots"
     os.environ["XDG_CURRENT_DESKTOP"] = "qtile:wlroots"
 
@@ -18,8 +18,8 @@ cursor_warp = True
 # WM_NAME(UTF8_STRING) = "Picture-in-picture"
 
 # borders
-color_focused = "#24a695"
-# color_focused = "#ffffff"
+# color_focused = "#24a695"
+color_focused = "#ffffff"
 color_normal = "#000000"
 border_width = 4
 
@@ -151,8 +151,8 @@ layouts = [
 
 widget_defaults = dict(
     # font="VeraSe",
-    background = "#010F1A",
-    foreground = "#ffffff",
+    background="#010F1A",
+    foreground="#ffffff",
     font="FiraSans",
     fontsize=18,
 )
@@ -222,4 +222,4 @@ def autostart():
     script = os.path.expanduser("~/.config/qtile/autostart.sh")
     subprocess.Popen([script])
     # lazy.function(set_wallpaper)
-    set_wallpaper(picture="20.jpg")
+    set_wallpaper(picture="23.png")

@@ -32,6 +32,11 @@ keys = [
     Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
     Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
 
+    # Key([mod, "mod1"], "j", lazy.layout.flip_down()),
+    # Key([mod, "mod1"], "k", lazy.layout.flip_up()),
+    # Key([mod, "mod1"], "h", lazy.layout.flip_left()),
+    # Key([mod, "mod1"], "l", lazy.layout.flip_right()),
+
     Key([mod, "mod1"], "j", lazy.layout.flip_down()),
     Key([mod, "mod1"], "k", lazy.layout.flip_up()),
     Key([mod, "mod1"], "h", lazy.layout.flip_left()),
@@ -73,6 +78,7 @@ keys = [
     Key([mod], "period", lazy.to_screen(1), desc='Keyboard focus to monitor 1'),
     Key([mod], "t", lazy.window.toggle_floating(),
         desc="Toggle floating on the focused window"),
+
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control", "Shift"], "r", lazy.restart(), desc="Restart conf"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
