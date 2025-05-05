@@ -58,7 +58,7 @@ screens = [
                 # widget.Spacer(length=605),
                 widget.Spacer(),
 
-                widget.KeyboardLayout(padding=0, margin=0),
+                widget.Systray(padding=0, margin=0),
 
                 widget.Sep(padding=16, size_percent=70),
 
