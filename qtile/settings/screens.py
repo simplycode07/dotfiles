@@ -52,13 +52,13 @@ screens = [
                 #     padding=8),
 
                 widget.Spacer(),
-                widget.Clock(format="%b %d   %I:%M %p",
+                widget.Clock(format="%b %d   %H:%M",
                              padding=0,
                              margin=0),
                 # widget.Spacer(length=605),
                 widget.Spacer(),
 
-                widget.Systray(padding=0, margin=0),
+                widget.Systray(padding=5, margin=0),
 
                 widget.Sep(padding=16, size_percent=70),
 
@@ -115,7 +115,7 @@ screens = [
     Screen(
         right=bar.Bar([
             widget.Spacer(10),
-            widget.Clock(format="%I",
+            widget.Clock(format="%H",
                          rotate=False,
                          padding=0,
                          margin=0,
