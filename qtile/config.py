@@ -164,6 +164,8 @@ extension_defaults = widget_defaults.copy()
 mouse = [
     Drag([mod], "Button1", lazy.window.set_position_floating(),
          start=lazy.window.get_position()),
+    Drag([mod, "shift"], "Button1", lazy.window.set_size_floating(),
+         start=lazy.window.get_size()),
     Drag([mod], "Button3", lazy.window.set_size_floating(),
          start=lazy.window.get_size()),
     Click([mod], "Button2", lazy.window.bring_to_front()),
@@ -213,8 +215,7 @@ wl_input_rules = None
 #
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
-# wmname = "LG3D"
-wmname = "Qtile"
+wmname = "LG3D"
 
 
 @hook.subscribe.startup_once
@@ -222,4 +223,4 @@ def autostart():
     script = os.path.expanduser("~/.config/qtile/autostart.sh")
     subprocess.Popen([script])
     # lazy.function(set_wallpaper)
-    set_wallpaper(picture="23.png")
+    set_wallpaper(picture="15.jpg")
