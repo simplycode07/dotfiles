@@ -108,8 +108,8 @@ keys = [
     Key([], "XF86AudioLowerVolume", lazy.spawn("amixer set Master 3%-")),
 
     # brightness control
-    Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set 5+")),
-    Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 5-")),
+    Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set 2%+")),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 2%-")),
 
     # move between workspaces
     Key([mod], "Tab", lazy.screen.next_group(skip_empty=True)),
