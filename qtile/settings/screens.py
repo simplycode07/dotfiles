@@ -55,6 +55,9 @@ screens = [
                 widget.Clock(format="%b %d   %H:%M",
                              padding=0,
                              margin=0),
+                # widget.Clock(format="%m月%d日 (%a) %H:%M",
+                #              padding=0,
+                #              margin=0),
                 # widget.Spacer(length=605),
                 widget.Spacer(),
 
