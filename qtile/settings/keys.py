@@ -101,6 +101,9 @@ keys = [
 
     Key(["control"], "Print", lazy.spawn("flameshot gui"),
         desc="Interactive screenshot of screen"),
+
+    Key([mod, "mod1"], "q", lazy.spawn("systemctl sleep")),
+
     # sound and volume controls
 
     Key([], "XF86AudioMute", lazy.spawn("amixer set Master toggle")),
