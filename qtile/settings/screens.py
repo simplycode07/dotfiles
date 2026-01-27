@@ -13,7 +13,7 @@ screens = [
             [
                 widget.Spacer(length=10),
 
-                widget.CurrentLayout(padding=2),
+                widget.CurrentLayout(padding=2, margin=10, mode='icon'),
 
                 widget.GroupBox(inactive="127D87",
                                 highlight_method="line",
@@ -62,6 +62,10 @@ screens = [
                 widget.Spacer(),
 
                 widget.Systray(padding=5, margin=0),
+
+                widget.Sep(padding=16, size_percent=70),
+
+                widget.CurrentScreen(padding=5),
 
                 widget.Sep(padding=16, size_percent=70),
 
@@ -129,6 +133,9 @@ screens = [
                          padding=0,
                          margin=0,
                          fontsize=30),
+
+            widget.Spacer(10),
+            widget.CurrentScreen(padding=5),
 
             # widget.Clock(format="%p",
             #              rotate=False,
