@@ -135,7 +135,7 @@ screens = [
                          fontsize=30),
 
             widget.Spacer(10),
-            widget.CurrentScreen(padding=5),
+            widget.CurrentScreen(padding=5, rotate=False),
 
             # widget.Clock(format="%p",
             #              rotate=False,

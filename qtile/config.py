@@ -135,9 +135,12 @@ layouts = [
     #               border_normal=color_normal,
     #               border_width=border_width),
     #
-    # layout.MonadTall(border_focus=color_focused,
-    #                  border_normal=color_normal,
-    #                  border_width=border_width),
+    layout.MonadTall(border_focus=color_focused,
+                     border_normal=color_normal,
+                     border_width=border_width,
+                     auto_maximize=True,
+                     min_secondary_size=200,
+                     ),
     #
     # layout.MonadWide(border_focus=color_focused,
     #                  border_normal=color_normal,
@@ -146,7 +149,7 @@ layouts = [
     # layout.Tile(),
     # layout.TreeTab(),
     # layout.VerticalTile(),
-    # layout.Zoomy(),
+    # layout.Zoomy(columnwidth=300),
 ]
 
 widget_defaults = dict(
