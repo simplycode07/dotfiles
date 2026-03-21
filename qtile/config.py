@@ -149,7 +149,7 @@ layouts = [
     # layout.Tile(),
     # layout.TreeTab(),
     # layout.VerticalTile(),
-    # layout.Zoomy(columnwidth=300),
+    layout.Zoomy(columnwidth=300),
 ]
 
 widget_defaults = dict(
