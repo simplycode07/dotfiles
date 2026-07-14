@@ -19,12 +19,15 @@ Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'npm ci' }
 Plug 'preservim/nerdtree'
 " Plug 'tpope/vim-commentary'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+if !exists('g:vscode')
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
+endif
+	
 "Plug 'https://github.com/rafi/awesome-vim-colorschemes'
-Plug 'rmagatti/auto-session'
+"Plug 'rmagatti/auto-session'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'Shatur/neovim-session-manager'
+"Plug 'Shatur/neovim-session-manager'
 "Plug 'preservim/tagbar'
 "Plug 'tc50cal/vim-terminal'
 Plug 'nvim-tree/nvim-web-devicons'
@@ -57,7 +60,7 @@ let g:airline_theme = "tokyonight"
 let g:airline#extensions#tabline#enabled = 0
 " let g:airline_theme = "catpuccin"
 
-autocmd VimEnter * TSEnable highlight
+"autocmd VimEnter * TSEnable highlight
 
 nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
