@@ -105,13 +105,22 @@ groups.append(
                  opacity=1,
                  warp_pointer=True,
                  ),
+        DropDown("bluetui",
+                 terminal + " -e bluetui",
+                 height=0.6,
+                 width=0.7,
+                 x=0.15,
+                 y=0.2,
+                 opacity=1,
+                 warp_pointer=True,
+                 ),
     ]),
 )
 
 keys.extend(
     [
-        Key([mod], "y", lazy.group["scratchpad"].dropdown_toggle("term")),
         Key([mod], "x", lazy.group["scratchpad"].dropdown_toggle("term")),
+        Key([mod, "shift"], "b", lazy.group["scratchpad"].dropdown_toggle("bluetui")),
         Key([mod], "w", lazy.function(set_wallpaper)),
     ]
 )
@@ -155,6 +164,7 @@ layouts = [
 widget_defaults = dict(
     # font="VeraSe",
     background="#010F1A",
+    # background="#101010",
     foreground="#ffffff",
     font="FiraSans",
     fontsize=18,
