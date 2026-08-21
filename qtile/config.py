@@ -26,15 +26,33 @@ border_width = 4
 
 def set_wallpaper(qtile=None, picture=None):
     if picture == None:
-        wallpaper_list = os.listdir(wallpaper_dir)
+        wallpaper_list = sorted(os.listdir(wallpaper_dir))
         for i in wallpaper_list:
             if os.path.isdir(wallpaper_dir + i):
                 wallpaper_list.remove(i)
 
-        picture = random.choice(wallpaper_list)
+        wallpaper_index = 0
+        curr_wallpaper = ""
+
+        try:
+            with open("/tmp/curr_wallpaper", "r") as file:
+                curr_wallpaper = file.read()
+                wallpaper_index = wallpaper_list.index(curr_wallpaper)
+
+        except FileNotFoundError:
+            with open("/tmp/wallpaper.logs", "a") as file:
+                file.write(f"no wallpaper found\n")
+
+        except ValueError:
+            with open("/tmp/wallpaper.logs", "a") as file:
+                file.write(f"wallpaper not in wallpaper list: {curr_wallpaper}, {wallpaper_index}\n")
+
+        picture = wallpaper_list[(wallpaper_index + 1) % len(wallpaper_list)]
 
     for screen in screens:
         screen.set_wallpaper(wallpaper_dir+picture, "fill")
+        with open("/tmp/curr_wallpaper", "w") as file:
+            file.write(picture)
 
 
 groups = [Group("1",
@@ -204,6 +222,7 @@ floating_layout = layout.Floating(
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"),  # GPG key password entry
         Match(title="Screenshot"),  # Screenshot tool
+        Match(title="flameshot"),  # Screenshot tool
     ],
     border_focus="#7AA2F7",
     border_normal="#00000000",
