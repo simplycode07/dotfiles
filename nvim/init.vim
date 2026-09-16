@@ -42,6 +42,7 @@ Plug 'Everblush/nvim'
 Plug 'akinsho/bufferline.nvim'
 "Plug 'stevearc/vim-arduino'
 Plug 'wellle/context.vim'
+Plug 'lervag/vimtex'
 call plug#end()
 
 let g:context_enabled = 0
